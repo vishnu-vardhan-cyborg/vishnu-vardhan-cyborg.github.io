@@ -1,0 +1,84 @@
+.glass-navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  pointer-events: default;
+     
+}
+.glass-navbar,
+.glass-navbar * {
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
+.glass-navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.glass-navbar li {
+  cursor: pointer;
+  color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.glass-navbar li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .glass-navbar {
+    width: 90%;
+    padding: 10px 16px;
+    top: 10px;
+    left: 5%;
+    transform: none;
+    border-radius: 8px;
+  }
+
+  .glass-navbar ul {
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .glass-navbar li {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+.glass-navbar li {
+  cursor: pointer;
+  color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.glass-navbar li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.2);
+}
+

@@ -1,0 +1,109 @@
+.tilted-card-figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tilted-card-mobile-alert {
+  position: absolute;
+  top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .tilted-card-mobile-alert {
+    display: block;
+  }
+  .tilted-card-caption {
+    display: none;
+  }
+}
+
+.tilted-card-inner {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.tilted-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.tilted-card-inner:hover .tilted-card-img {
+  filter: grayscale(0%);
+  transform: scale(1);
+}
+
+.tilted-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tilted-card-caption {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 6px 14px;
+  font-size: 12px;
+  color: #2d2d2d;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.tilted-card-inner:hover ~ .tilted-card-caption {
+  opacity: 1;
+}
+
+.tilted-card-figure,
+.tilted-card-caption,
+.tilted-card-overlay {
+  cursor: default;
+  user-select: none;
+}
+
+.popout-image {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 290px;
+  height: 290px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 4;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.tilted-card-inner:hover .popout-image {
+  transform: scale(1.02);
+  filter: grayscale(0%);
+}
+
+.cyvorg-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  user-select: none;
+  pointer-events: none;
+  z-index: 5;
+}
