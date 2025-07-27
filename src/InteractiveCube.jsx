@@ -8,7 +8,7 @@ import {
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { a, useSpring } from '@react-spring/three';
 import './App.css';
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import * as THREE from 'three';
 import ScrollSnapBlink from './blink/ScrollSnapBlink';
 
